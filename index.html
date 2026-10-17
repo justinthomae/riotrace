@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Riot Race</title>
+<meta name="description" content="Riot Race: 3D combat racing by Grudge Match Games. Coming soon.">
+<meta name="theme-color" content="#0d0d10">
+<style>
+  :root { --bg: #0d0d10; --fg: #f2f2f2; --muted: #9a9aa3; --accent: #fa731f; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { background: radial-gradient(ellipse at 50% 120%, #3a1606 0%, var(--bg) 60%); color: var(--fg);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; display: grid; place-items: center;
+         padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom)); text-align: center; }
+  h1 { margin: 0; font-size: clamp(48px, 14vw, 120px); font-weight: 900; letter-spacing: 0.02em; font-style: italic;
+       color: var(--accent); text-shadow: 0 6px 30px rgba(250, 115, 31, 0.35); line-height: 1; }
+  .stripe { width: min(420px, 80vw); height: 6px; margin: 22px auto; background: var(--accent); transform: skewX(-20deg); }
+  p { margin: 0.4em 0; color: var(--muted); max-width: 34em; }
+  .soon { color: var(--fg); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 1.2em; }
+  footer { margin-top: 2.5em; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>RIOT RACE</h1>
+  <div class="stripe" aria-hidden="true"></div>
+  <p>3D combat racing for up to eight racers. Drift, boost, lock on, and leave your rivals in the wall.</p>
+  <p class="soon">Coming soon</p>
+  <footer>© 2026 Grudge Match Games</footer>
+</main>
+</body>
+</html>
