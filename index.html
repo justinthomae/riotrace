@@ -1,42 +1,121 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Riot Race</title>
-<meta name="description" content="Riot Race: 3D combat racing by Grudge Match Games. Drift, boost, lock on and wreck your rivals. Coming soon.">
-<meta name="theme-color" content="#0a080a">
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Riot Race</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+  
+<!-- Riot Race branding (Tools/publish_pages.py) -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0a080a">
+<meta name="description" content="Riot Race: 3D combat racing by Grudge Match Games. Drift, boost, lock on and wreck your rivals.">
 <meta property="og:title" content="Riot Race">
-<meta property="og:description" content="3D combat racing by Grudge Match Games. Coming soon.">
+<meta property="og:description" content="Riot Race: 3D combat racing by Grudge Match Games. Drift, boost, lock on and wreck your rivals.">
 <meta property="og:image" content="https://riotrace.grudgematchgames.com/og-image.jpg">
 <meta property="og:url" content="https://riotrace.grudgematchgames.com/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg: #0a080a; --fg: #f4f1ee; --muted: #c9c2bc; --accent: #ff7a1a; }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; margin: 0; }
-  body { color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; text-align: center;
-         background: var(--bg) url('rr-keyart-wide.webp') center / cover no-repeat fixed;
-         display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
-         padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom)); }
-  @media (orientation: portrait) { body { background-image: url('rr-keyart-tall.webp'); } }
-  body::before { content: ""; position: fixed; inset: 0; background: linear-gradient(180deg, rgba(10,8,10,0) 45%, rgba(10,8,10,.92) 85%); }
-  h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  main { position: relative; padding-bottom: 4vh; }
-  p { margin: .4em auto; color: var(--muted); max-width: 34em; text-shadow: 0 2px 8px rgba(0,0,0,.8); }
-  .soon { color: var(--fg); font-weight: 800; letter-spacing: .2em; text-transform: uppercase; margin-top: 1em;
-          display: inline-block; padding: .6em 1.4em; border: 2px solid var(--accent); background: rgba(10,8,10,.6); }
-  footer { margin-top: 2em; font-size: 13px; color: var(--muted); text-shadow: 0 2px 8px rgba(0,0,0,.8); }
+  html, body { background: #0a080a url('rr-keyart-wide.webp') center / cover no-repeat; }
+  @media (orientation: portrait) { html, body { background-image: url('rr-keyart-tall.webp'); } }
+  /* The key art carries the logo, so Unity's own loading logo is hidden rather than replaced. */
+  #unity-logo { display: none !important; }
 </style>
 </head>
-<body>
-<main>
-  <h1>Riot Race</h1>
-  <p>3D combat racing for up to eight racers. Drift, boost, lock on, and leave your rivals in the wall.</p>
-  <p class="soon">Coming soon</p>
-  <footer>© 2026 Grudge Match Games</footer>
-</main>
-</body>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
+        }
+      });
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/8d42fec8d97b7545e8b5616466eaa42b.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/60476c277805e43c08d7ee367066c3ec.data.unityweb",
+        frameworkUrl: buildUrl + "/bd9411f5267cda84bb633cafcaf25f26.framework.js.unityweb",
+        codeUrl: buildUrl + "/beed42caac36173302823a1165e1f9fb.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Grudge Match Games",
+        productName: "Riot Race",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
 </html>

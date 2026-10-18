@@ -1,0 +1,27 @@
+{
+  "name": "Riot Race",
+  "short_name": "Riot Race",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "background_color": "#0a080a",
+  "theme_color": "#0a080a",
+  "description": "Riot Race: 3D combat racing by Grudge Match Games. Drift, boost, lock on and wreck your rivals.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
