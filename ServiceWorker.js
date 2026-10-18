@@ -1,9 +1,9 @@
 const cacheName = "Grudge Match Games-Riot Race-1.0";
 const contentToCache = [
-    "Build/f14a35d26f9833dd66c9ff1edf6a70cd.loader.js",
+    "Build/4fe19ee57e9cbf26c5bba7e477da31c1.loader.js",
     "Build/a652bac5367938b72471d020b9de5d9e.framework.js.unityweb",
-    "Build/1ea1ce28540f9ca1ce1e6b05a5e91c0d.data.unityweb",
-    "Build/1197c1f33a60bac1f577a95ba382b5d8.wasm.unityweb",
+    "Build/f10a392bc8f6ca2dc82d5a21b7fa7adc.data.unityweb",
+    "Build/d0eb7d2766875febbb02db72fd629e10.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
