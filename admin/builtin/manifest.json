@@ -202,6 +202,11 @@
    "size": "1280x720"
   },
   {
+   "key": "Tracks/s",
+   "file": "Tracks/s.jpg",
+   "size": "1280x720"
+  },
+  {
    "key": "Tracks/savanna_sprint",
    "file": "Tracks/savanna_sprint.jpg",
    "size": "1280x720"
@@ -219,7 +224,7 @@
   {
    "key": "Tracks/sunloop_bay",
    "file": "Tracks/sunloop_bay.jpg",
-   "size": "640x360"
+   "size": "1280x720"
   },
   {
    "key": "UI/Bar_Fill",
