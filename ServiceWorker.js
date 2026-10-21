@@ -3,7 +3,7 @@
 // kept loading that first build forever. Here the page and small metadata files always come from the network (the
 // cache is only an offline fallback), the content-hashed Build/ files stay cache-first, and each publish gets its own
 // cache so old builds are deleted as soon as the new worker activates.
-const cacheName = "riotrace-2610210425";
+const cacheName = "riotrace-2610210426";
 const contentToCache = ["Build/d4c3534f516541353616f52f95cb3c15.loader.js", "Build/1298b32b0fe6944728846b8677093c35.framework.js.unityweb", "Build/d9cf504a628554843620121315848524.data.unityweb", "Build/a0d42a3c22b8c8e5c0e97a475611b4a3.wasm.unityweb", "TemplateData/style.css"];
 
 self.addEventListener("install", function (e) {
