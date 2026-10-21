@@ -36,7 +36,7 @@
         { "track": "harbor_run", "mode": "CombatRace", "laps": 4 },
         { "track": "neon_district", "mode": "CombatRace", "laps": 3 },
         { "track": "sundown_canyon", "mode": "PureRace", "laps": 3 },
-        { "track": "neon_district", "mode": "CombatRace", "laps": 4 },
+        { "track": "neon_corkscrew", "mode": "CombatRace", "laps": 3 },
         { "track": "harbor_run", "mode": "CombatRace", "laps": 4 }
       ] }
   ]

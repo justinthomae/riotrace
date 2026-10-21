@@ -13,6 +13,7 @@
   "track_greenfield_farm",
   "track_harbor_run",
   "track_jungle_temple",
+  "track_neon_corkscrew",
   "track_neon_district",
   "track_paradise_spiral",
   "track_pinewood_forest",
@@ -172,6 +173,11 @@
   {
    "key": "Tracks/jungle_temple",
    "file": "Tracks/jungle_temple.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/neon_corkscrew",
+   "file": "Tracks/neon_corkscrew.jpg",
    "size": "640x360"
   },
   {
