@@ -23,9 +23,23 @@
   @media (orientation: portrait) { html, body { background-image: url('rr-keyart-tall.webp'); } }
   /* The key art carries the logo, so Unity's own loading logo is hidden rather than replaced. */
   #unity-logo { display: none !important; }
+  /* iOS 27 scroll-edge blur fix: an opaque, full-width fixed strip at the very top edge makes WebKit
+     fill the status-bar band with this color instead of drawing the frosted Liquid Glass blur. */
+  .ios-top-edge {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    width: 100%;
+    height: max(11px, env(safe-area-inset-top, 0px));
+    background: var(--ios-top-edge-color, #0a080a);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* Start the game canvas below the strip (and the notch/status bar under viewport-fit=cover) so no HUD is covered. */
+  #unity-container { top: max(11px, env(safe-area-inset-top, 0px)); height: calc(100% - max(11px, env(safe-area-inset-top, 0px))); }
 </style>
 </head>
   <body>
+    <div class="ios-top-edge" aria-hidden="true"></div>
     <div id="unity-container">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -98,7 +112,7 @@
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes, viewport-fit=cover';
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
