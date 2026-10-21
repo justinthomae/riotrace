@@ -19,7 +19,7 @@
         { "name": "Old Mine Road", "secret": true, "aiPreference": 0.3, "halfWidth": 4.5, "runoff": 1,
           "points": [[245, 333, 6, 1, 20], [247, 352, 5, 1, 21], [236, 380, 4.5, 1, 22], [210, 403, 4.5, 1, 24], [172, 421, 6, 1, 25]] }
       ],
-      "pickups": [{ "kind": "turbo", "at": 0.06, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.52, "lanes": [0] },
+      "pickups": [{ "kind": "shield", "at": 0.7, "lanes": [0] }, { "kind": "turbo", "at": 0.06, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.52, "lanes": [0] },
         { "kind": "ammo", "at": 0.91, "lanes": [-0.45, 0.45] }],
       // The crest jump launches off the summit; the second kicker sits on the descent.
       "jumps": [{ "at": 0.455, "power": 1.4 }, { "at": 0.615, "power": 1.0 }] }

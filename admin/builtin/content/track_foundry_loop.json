@@ -11,7 +11,7 @@
         [242, -70, 8, 3, 1], [200, -122, 8, 3, 2], [110, -132, 8.5, 3, 2], [40, -122, 8.5, 3, 1], [6, -95, 8.5, 3, 0]
       ],
       // Repair (armour), ammo (secondary round + cooled gun) and turbo pickups; "at" is a fraction of the lap.
-      "pickups": [{ "kind": "turbo", "at": 0.075, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.31, "lanes": [0] },
+      "pickups": [{ "kind": "shield", "at": 0.03, "lanes": [0] }, { "kind": "turbo", "at": 0.075, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.31, "lanes": [0] },
         { "kind": "ammo", "at": 0.84, "lanes": [-0.45, 0.45] }] ,
       // Ramps: cross the lip fast to launch. In the air hold DRIFT to kickflip, steer to spin.
       "jumps": [{ "at": 0.80, "power": 1.0 }] }

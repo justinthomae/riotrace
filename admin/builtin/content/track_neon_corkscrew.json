@@ -20,7 +20,7 @@
         [120, 100, 7.5, 2.5, 20], [120, 30, 7.5, 2.5, 19], [120, -40, 7.5, 2.5, 17], [105, -110, 7.5, 2.5, 14], [50, -160, 7.5, 2.5, 10],
         [-30, -170, 7.5, 2.5, 6], [-95, -135, 7.5, 2.5, 3], [-115, -70, 7.5, 2.5, 1], [-90, -15, 7.5, 2.5, 0], [-45, 0, 7.5, 2.5, 0]
       ],
-      "pickups": [{ "kind": "turbo", "at": 0.04, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.15, "lanes": [0] },
+      "pickups": [{ "kind": "shield", "at": 0.875, "lanes": [0] }, { "kind": "turbo", "at": 0.04, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.15, "lanes": [0] },
         { "kind": "repair", "at": 0.555, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.785, "lanes": [0] }],
       // A kicker on the rooftop straight, just before the skyway dives over the downtown straight.
       "jumps": [{ "at": 0.56, "power": 1.0 }] }
