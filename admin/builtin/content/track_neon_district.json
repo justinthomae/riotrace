@@ -1,0 +1,28 @@
+{
+  "contentVersion": 1,
+  "tracks": [
+    { "id": "neon_district", "name": "Neon District", "theme": "neon", "laps": 3, "checkpoints": 16,
+      "halfWidth": 8, "runoff": 1.5, "bank": 0.4,
+      // Night-time city grid: 90-degree block corners, long avenues, tight walls. [x, y, halfWidth, runoff, height]
+      "points": [
+        [0, 0, 8.5, 1.5, 0], [0, 150, 8.5, 1.5, 0], [0, 300, 8.5, 1.5, 0], [40, 345, 8, 1.5, 0], [180, 345, 8, 1.5, 0],
+        [220, 305, 7.5, 1.5, 0], [220, 230, 7.5, 1.5, 0], [260, 190, 8, 1.5, 0], [420, 190, 8, 1.5, 2], [460, 230, 8, 1.5, 4],
+        [460, 420, 8.5, 1.5, 6], [500, 460, 8, 1.5, 6], [640, 460, 8, 1.5, 4], [680, 420, 8.5, 1.5, 2], [680, 354, 5, 2, 1.5], [680, 180, 5, 2, 0], [680, 14, 5, 2, 0],
+        [680, -60, 9, 2, 0], [640, -100, 8.5, 1.5, 0], [420, -100, 8.5, 1.5, 0], [380, -60, 7.5, 1.5, 0], [380, 40, 7.5, 1.5, 0],
+        [340, 80, 7.5, 1.5, 0], [160, 80, 8, 1.5, 0], [110, 40, 8, 1.5, 0], [100, -60, 8, 1.5, 0], [60, -110, 8.5, 1.5, 0],
+        [10, -90, 8.5, 1.5, 0]
+      ],
+      // Back Alley: a narrow zig-zag through the blocks that cuts the north-west blocks — quicker only if driven cleanly.
+      "shortcuts": [
+        { "name": "Back Alley", "aiPreference": 0.6, "halfWidth": 4.5, "runoff": 1,
+          "points": [[0, 230, 6, 1, 0], [8, 262, 5, 1, 0], [30, 285, 4.5, 1, 0], [70, 291, 4.5, 1, 0], [110, 268, 4.5, 1, 0], [150, 287, 4.5, 1, 0], [190, 268, 4.5, 1, 0], [212, 248, 5, 1, 0], [220, 232, 6, 1, 0]] }
+      ],
+      // Repair (armour), ammo (secondary round + cooled gun) and turbo pickups; "at" is a fraction of the lap.
+      "pickups": [{ "kind": "repair", "at": 0.05, "lanes": [0] }, { "kind": "turbo", "at": 0.275, "lanes": [-0.5, 0.5] },
+        { "kind": "ammo", "at": 0.35, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.715, "lanes": [-0.4, 0.4] },
+        { "kind": "turbo", "at": 0.70, "lanes": [0] }, { "kind": "ammo", "at": 0.84, "lanes": [0] }] ,
+      // Ramps: cross the lip fast to launch. In the air hold DRIFT to kickflip, steer to spin.
+      "loops": [{"at": 0.5513, "radius": 9, "length": 320}],
+      "jumps": [{ "at": 0.69, "power": 1.1 }] }
+  ]
+}

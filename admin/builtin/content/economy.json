@@ -1,0 +1,15 @@
+{
+  "contentVersion": 1,
+  // Race payouts and progression. Edit live from the Grudge Match admin site (it saves an "economy" override).
+  "economy": {
+    "startingCredits": 500,
+    "maxLevel": 30,
+    "positionCredits": [600, 450, 350, 280, 220, 170, 130, 100],
+    "smallFieldScale": 0.4,
+    "finishCredits": 100,
+    "creditsPerKill": 40, "creditsPerAssist": 15, "combatCreditsCap": 300,
+    "xpBase": 100, "xpPerPlaceAhead": 25, "xpFinishBonus": 50, "xpPerKill": 20, "xpKillCap": 150,
+    "timeTrialCredits": 150, "timeTrialXp": 120, "timeTrialXpUnfinished": 40,
+    "xpToNextBase": 400, "xpToNextPerLevel": 150
+  }
+}

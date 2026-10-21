@@ -1,0 +1,27 @@
+{
+  "contentVersion": 1,
+  "tracks": [
+    { "id": "skyline_ridge", "name": "Skyline Ridge", "theme": "ridge", "laps": 3, "checkpoints": 18,
+      "halfWidth": 8.5, "runoff": 3, "bank": 1.0,
+      // Mountain pass: switchback hairpins climb 40 m to a crest jump, then a fast banked descent, a carousel and a
+      // chicane back to the line. [x, y, halfWidth, runoff, height]
+      "points": [
+        [0, -80, 9, 3, 0], [0, 60, 9, 3, 1], [0, 200, 9, 3, 4], [30, 270, 8.5, 3, 8], [100, 300, 8.5, 3, 12],
+        [180, 290, 8, 3, 16], [240, 320, 8, 3, 19], [260, 370, 7.5, 2.5, 22], [240, 415, 7.5, 2.5, 24], [190, 420, 7.5, 2.5, 25],
+        [120, 425, 8, 3, 27], [70, 445, 8, 3, 29], [50, 490, 7.5, 2.5, 31], [80, 525, 7.5, 2.5, 33], [150, 530, 8, 3, 35],
+        [260, 530, 8.5, 3, 38], [360, 525, 9, 3, 40], [440, 500, 9, 3, 38], [490, 440, 9, 3, 33], [505, 360, 9, 3, 27],
+        [500, 270, 9, 3, 21], [480, 190, 9, 3, 16], [430, 140, 9, 3, 12], [360, 120, 8.5, 3, 9], [300, 140, 8, 3, 8],
+        [250, 120, 8, 3, 7], [200, 140, 8, 3, 6], [120, 120, 8.5, 3, 4], [110, 20, 8.5, 3, 3], [95, -60, 9, 3, 2],
+        [60, -120, 9, 3, 1], [20, -118, 9, 3, 0]
+      ],
+      // The old mine road: a narrow, unmarked cut through the inside of the first hairpin.
+      "shortcuts": [
+        { "name": "Old Mine Road", "secret": true, "aiPreference": 0.3, "halfWidth": 4.5, "runoff": 1,
+          "points": [[245, 333, 6, 1, 20], [247, 352, 5, 1, 21], [236, 380, 4.5, 1, 22], [210, 403, 4.5, 1, 24], [172, 421, 6, 1, 25]] }
+      ],
+      "pickups": [{ "kind": "turbo", "at": 0.06, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.52, "lanes": [0] },
+        { "kind": "ammo", "at": 0.91, "lanes": [-0.45, 0.45] }],
+      // The crest jump launches off the summit; the second kicker sits on the descent.
+      "jumps": [{ "at": 0.455, "power": 1.4 }, { "at": 0.615, "power": 1.0 }] }
+  ]
+}

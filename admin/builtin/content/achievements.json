@@ -1,0 +1,21 @@
+{
+  "contentVersion": 1,
+  "achievements": [
+    {"id": "first_finish", "name": "Green Flag", "description": "Finish a race", "stat": "RacesFinished", "target": 1, "credits": 200},
+    {"id": "first_win", "name": "Winner", "description": "Win a race", "stat": "Wins", "target": 1, "credits": 300},
+    {"id": "first_takedown", "name": "First Blood", "description": "Take down a rival", "stat": "Takedowns", "target": 1, "credits": 150},
+    {"id": "podiums_10", "name": "Podium Regular", "description": "Finish on the podium 10 times", "stat": "Podiums", "target": 10, "credits": 800},
+    {"id": "wins_10", "name": "Serial Winner", "description": "Win 10 races", "stat": "Wins", "target": 10, "credits": 1500},
+    {"id": "takedowns_50", "name": "Wrecking Crew", "description": "50 takedowns", "stat": "Takedowns", "target": 50, "credits": 1200},
+    {"id": "takedowns_200", "name": "Demolition Derby", "description": "200 takedowns", "stat": "Takedowns", "target": 200, "credits": 3000},
+    {"id": "races_50", "name": "Road Warrior", "description": "Finish 50 races", "stat": "RacesFinished", "target": 50, "credits": 2000},
+    {"id": "level_5", "name": "Rising Star", "description": "Reach level 5", "stat": "Level", "target": 5, "credits": 500},
+    {"id": "level_10", "name": "Riot Veteran", "description": "Reach level 10", "stat": "Level", "target": 10, "credits": 1500},
+    {"id": "cup_win", "name": "Silverware", "description": "Win a cup", "stat": "CupsWon", "target": 1, "credits": 1000},
+    {"id": "cups_all", "name": "Grand Slam", "description": "Win all three cups", "stat": "CupsWon", "target": 3, "credits": 3000},
+    {"id": "cars_3", "name": "Stable", "description": "Own three cars", "stat": "CarsOwned", "target": 3, "credits": 500},
+    {"id": "style_5", "name": "Show-Off", "description": "Buy five style parts", "stat": "StylePartsBought", "target": 5, "credits": 600},
+    {"id": "secret_1", "name": "Explorer", "description": "Find a secret shortcut", "stat": "SecretsFound", "target": 1, "credits": 500},
+    {"id": "tracks_all", "name": "Tourist", "description": "Set a lap time on every track", "stat": "TracksLapped", "target": 13, "credits": 400}
+  ]
+}

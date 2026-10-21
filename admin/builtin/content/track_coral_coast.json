@@ -1,0 +1,25 @@
+{
+  "contentVersion": 1,
+  "tracks": [
+    { "id": "coral_coast", "name": "Coral Coast", "theme": "beach", "laps": 3, "checkpoints": 14,
+      "halfWidth": 9, "runoff": 3.5, "bank": 0.6,
+      // Seaside circuit: a flat-out beachfront straight over a sand dune, a long climb up the cliff road to a
+      // headland bend, a fast descent, then a run of esses through the boardwalk back to the line.
+      // [x, y, halfWidth, runoff, height]
+      "points": [
+        [0, -60, 9.5, 3.5, 0], [0, 140, 9.5, 3.5, 0], [15, 215, 9, 3.5, 1], [60, 265, 8.5, 3, 2], [130, 285, 8.5, 3, 3],
+        [200, 270, 8, 3, 5], [250, 225, 8, 3, 8], [275, 160, 8, 3, 11], [320, 115, 8, 3, 13], [385, 105, 8, 3, 14],
+        [440, 135, 8, 3, 14], [470, 60, 8, 3, 12], [455, -20, 8.5, 3, 8], [400, -75, 8.5, 3, 4], [320, -100, 8.5, 3, 1],
+        [250, -80, 8, 3, 0], [190, -120, 8, 3, 0], [130, -150, 8, 3, 0], [70, -160, 8.5, 3, 0], [25, -120, 9, 3.5, 0]
+      ],
+      // Secret: a sandy track along the tide line that skips the boardwalk esses.
+      "shortcuts": [
+        { "name": "Tide Pools", "secret": true, "aiPreference": 0.2, "halfWidth": 4.5, "runoff": 1,
+          "points": [[250, -80, 6, 1, 0], [215, -84, 5, 1, 0], [160, -94, 4.5, 1, 0], [100, -104, 4.5, 1, 0], [55, -110, 4.5, 1, 0], [30, -100, 5, 1, 0], [12, -84, 6, 1, 0]] }
+      ],
+      "pickups": [{ "kind": "turbo", "at": 0.04, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.25, "lanes": [0] },
+        { "kind": "repair", "at": 0.62, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.86, "lanes": [0] }],
+      // A sand dune on the beach straight and a kicker on the cliff descent.
+      "jumps": [{ "at": 0.08, "power": 1.2 }, { "at": 0.64, "power": 1.1 }] }
+  ]
+}

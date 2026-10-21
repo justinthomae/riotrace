@@ -1,0 +1,42 @@
+{
+  "contentVersion": 1,
+  // Championships: fixed rivals, points per round (10-8-6-5-4-3-2-1), reverse-standings grids, podium prize.
+  "cups": [
+    { "id": "rookie_cup", "name": "Rookie Cup", "level": 1, "difficulty": "Easy",
+      "description": "Three short races to learn the ropes. Rivals go easy on you.",
+      "prizeCredits": [2000, 1200, 700], "prizeXp": 500,
+      "rounds": [
+        { "track": "foundry_loop", "mode": "PureRace", "laps": 3 },
+        { "track": "harbor_run", "mode": "CombatRace", "laps": 2 },
+        { "track": "foundry_loop", "mode": "CombatRace", "laps": 4 }
+      ] },
+    { "id": "street_cup", "name": "Street Fight Cup", "level": 3, "difficulty": "Normal",
+      "description": "Night streets and harbour docks. Every race is a combat race.",
+      "prizeCredits": [3500, 2100, 1200], "prizeXp": 800,
+      "rounds": [
+        { "track": "neon_district", "mode": "CombatRace", "laps": 2 },
+        { "track": "harbor_run", "mode": "CombatRace", "laps": 3 },
+        { "track": "foundry_loop", "mode": "CombatRace", "laps": 4 },
+        { "track": "neon_district", "mode": "CombatRace", "laps": 3 }
+      ] },
+    { "id": "coast_cup", "name": "Sun & Stunts Cup", "level": 5, "difficulty": "Normal",
+      "description": "Beaches, canyons and mountain passes. Big air and secret routes reward the brave.",
+      "prizeCredits": [4500, 2700, 1500], "prizeXp": 1000,
+      "rounds": [
+        { "track": "coral_coast", "mode": "CombatRace", "laps": 3 },
+        { "track": "sundown_canyon", "mode": "PureRace", "laps": 3 },
+        { "track": "skyline_ridge", "mode": "CombatRace", "laps": 2 },
+        { "track": "coral_coast", "mode": "PureRace", "laps": 4 }
+      ] },
+    { "id": "grudge_cup", "name": "Grudge Cup", "level": 6, "difficulty": "Hard",
+      "description": "The real thing. Hard rivals, long races, no mercy.",
+      "prizeCredits": [6000, 3500, 2000], "prizeXp": 1400,
+      "rounds": [
+        { "track": "harbor_run", "mode": "CombatRace", "laps": 4 },
+        { "track": "neon_district", "mode": "CombatRace", "laps": 3 },
+        { "track": "sundown_canyon", "mode": "PureRace", "laps": 3 },
+        { "track": "neon_district", "mode": "CombatRace", "laps": 4 },
+        { "track": "harbor_run", "mode": "CombatRace", "laps": 4 }
+      ] }
+  ]
+}

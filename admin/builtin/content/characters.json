@@ -1,0 +1,23 @@
+{
+  "contentVersion": 1,
+  // The racers. Art lives in Resources/Characters/<id>.png (full body) and <id>_head.png (face icon).
+  // "paint"/"accent" are the car colours that match their suit; picking a racer offers them in the garage.
+  "characters": [
+    { "id": "panda", "name": "Bao", "animal": "Panda", "color": "#18B8C8", "paint": "cosmetic.paint.shadow", "accent": "cosmetic.paint.ice",
+      "tagline": "Calm on the straights. Chaos in the corners." },
+    { "id": "bunny", "name": "Jolt", "animal": "Rabbit", "color": "#8CF21A", "paint": "cosmetic.paint.ghost", "accent": "cosmetic.paint.toxic",
+      "tagline": "First off the line, every single time." },
+    { "id": "tiger", "name": "Blaze", "animal": "Tiger", "color": "#FF7A12", "paint": "cosmetic.paint.ember", "accent": "cosmetic.paint.gold",
+      "tagline": "Hunts the leader. Never lets go." },
+    { "id": "monkey", "name": "Banjo", "animal": "Monkey", "color": "#2A5CFF", "paint": "cosmetic.paint.cobalt", "accent": "cosmetic.paint.gold",
+      "tagline": "Loves a shortcut. Usually finds one." },
+    { "id": "raccoon", "name": "Bandit", "animal": "Raccoon", "color": "#8C33D9", "paint": "cosmetic.paint.gunmetal", "accent": "cosmetic.paint.violet",
+      "tagline": "If it isn't bolted down, it's in the trunk." },
+    { "id": "wolf", "name": "Howl", "animal": "Wolf", "color": "#1F5CFF", "paint": "cosmetic.paint.cobalt", "accent": "cosmetic.paint.ghost",
+      "tagline": "Runs in a pack. Wins alone." },
+    { "id": "bear", "name": "Grizz", "animal": "Bear", "color": "#D81E24", "paint": "cosmetic.paint.crimson", "accent": "cosmetic.paint.copper",
+      "tagline": "Doesn't brake. Doesn't need to." },
+    { "id": "fox", "name": "Flick", "animal": "Fox", "color": "#FF4A18", "paint": "cosmetic.paint.ember", "accent": "cosmetic.paint.ghost",
+      "tagline": "Too quick to catch, too sly to trust." }
+  ]
+}

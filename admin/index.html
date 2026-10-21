@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Grudge Match Admin</title>
+<link rel="icon" href="../favicon-32.png">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header>
+  <div class="brand">GRUDGE MATCH <span>ADMIN</span></div>
+  <nav id="tabs" hidden>
+    <button data-tab="content">Content</button>
+    <button data-tab="economy">Economy</button>
+    <button data-tab="maps">Maps</button>
+    <button data-tab="characters">Characters</button>
+    <button data-tab="assets">Art &amp; sound</button>
+    <button data-tab="players">Players</button>
+    <button data-tab="log">Log</button>
+  </nav>
+  <div id="who"></div>
+</header>
+
+<main>
+  <section id="signin" class="card narrow" hidden>
+    <h2>Sign in</h2>
+    <p class="muted">Use your Grudge Match account. Only admins can open this page.</p>
+    <form id="signin-form">
+      <label>Email <input id="email" type="email" autocomplete="username" required></label>
+      <label>Password <input id="password" type="password" autocomplete="current-password" required></label>
+      <button class="primary" type="submit">Sign in</button>
+    </form>
+    <div class="row">
+      <button id="google" type="button">Google</button>
+      <button id="facebook" type="button">Facebook</button>
+    </div>
+    <p id="signin-msg" class="msg"></p>
+  </section>
+
+  <section id="denied" class="card narrow" hidden>
+    <h2>Not an admin</h2>
+    <p class="muted">This account doesn't have the Grudge Match admin role.</p>
+    <button id="signout2">Sign out</button>
+  </section>
+
+  <div id="app" hidden>
+    <p class="game-pick">Game: <select id="game"><option value="riotrace">Riot Race</option></select>
+      <span class="muted">Changes reach players within two minutes, at the menus (never mid-race).</span></p>
+    <section data-panel="content"></section>
+    <section data-panel="economy"></section>
+    <section data-panel="maps"></section>
+    <section data-panel="characters"></section>
+    <section data-panel="assets"></section>
+    <section data-panel="players"></section>
+    <section data-panel="log"></section>
+  </div>
+</main>
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

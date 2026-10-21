@@ -3,8 +3,8 @@
 // kept loading that first build forever. Here the page and small metadata files always come from the network (the
 // cache is only an offline fallback), the content-hashed Build/ files stay cache-first, and each publish gets its own
 // cache so old builds are deleted as soon as the new worker activates.
-const cacheName = "riotrace-2610211304";
-const contentToCache = ["Build/cae9857021db1d3dee6a22d11f4fc2c7.loader.js", "Build/f35396b10783ea3fcc78a6e96a36122a.framework.js.unityweb", "Build/b979ff188c38a4d770b06c7d71f014e0.data.unityweb", "Build/b74bccb4bea8506f298c70e24a001ad8.wasm.unityweb", "TemplateData/style.css"];
+const cacheName = "riotrace-2610211330";
+const contentToCache = ["Build/60488f4d76dccbaf2ea1d1a64e6c7938.loader.js", "Build/ca65f7df375b7c78557d5b9a653ea242.framework.js.unityweb", "Build/fc8ca65379a9030859ac9c126bba1562.data.unityweb", "Build/89b4d2d75ef57d7cb29dd388457b1436.wasm.unityweb", "TemplateData/style.css"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(cacheName).then(function (cache) { return cache.addAll(contentToCache); }).then(function () { return self.skipWaiting(); }));
@@ -27,6 +27,7 @@ self.addEventListener("fetch", function (e) {
   const request = e.request;
   if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
   const path = new URL(request.url).pathname;
+  if (path.indexOf("/admin/") === 0) return;
   if (request.mode === "navigate" || /(\/|\.html|\.json|\.webmanifest|\.js)$/.test(path) && path.indexOf("/Build/") < 0) {
     e.respondWith(networkFirst(request));
     return;

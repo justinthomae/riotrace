@@ -1,0 +1,410 @@
+{
+ "content": [
+  "achievements",
+  "characters",
+  "cosmetics",
+  "cups",
+  "economy",
+  "track_coral_coast",
+  "track_crystal_caverns",
+  "track_foundry_loop",
+  "track_frostbite_pass",
+  "track_grand_prix",
+  "track_greenfield_farm",
+  "track_harbor_run",
+  "track_jungle_temple",
+  "track_neon_district",
+  "track_pinewood_forest",
+  "track_savanna_sprint",
+  "track_skyline_ridge",
+  "track_sundown_canyon",
+  "unlocks",
+  "vehicles",
+  "weapons"
+ ],
+ "images": [
+  {
+   "key": "Branding/AppIcon",
+   "file": "Branding/AppIcon.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Branding/KeyArtTall",
+   "file": "Branding/KeyArtTall.jpg",
+   "size": "940x1672"
+  },
+  {
+   "key": "Branding/KeyArtWide",
+   "file": "Branding/KeyArtWide.jpg",
+   "size": "1672x940"
+  },
+  {
+   "key": "Branding/Logo",
+   "file": "Branding/Logo.png",
+   "size": "1600x536"
+  },
+  {
+   "key": "Branding/ShowroomTall",
+   "file": "Branding/ShowroomTall.jpg",
+   "size": "1152x2048"
+  },
+  {
+   "key": "Branding/ShowroomWide",
+   "file": "Branding/ShowroomWide.jpg",
+   "size": "2048x1152"
+  },
+  {
+   "key": "Characters/bear",
+   "file": "Characters/bear.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/bear_head",
+   "file": "Characters/bear_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/bunny",
+   "file": "Characters/bunny.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/bunny_head",
+   "file": "Characters/bunny_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/fox",
+   "file": "Characters/fox.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/fox_head",
+   "file": "Characters/fox_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/monkey",
+   "file": "Characters/monkey.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/monkey_head",
+   "file": "Characters/monkey_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/panda",
+   "file": "Characters/panda.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/panda_head",
+   "file": "Characters/panda_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/raccoon",
+   "file": "Characters/raccoon.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/raccoon_head",
+   "file": "Characters/raccoon_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/tiger",
+   "file": "Characters/tiger.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/tiger_head",
+   "file": "Characters/tiger_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Characters/wolf",
+   "file": "Characters/wolf.png",
+   "size": "1024x1024"
+  },
+  {
+   "key": "Characters/wolf_head",
+   "file": "Characters/wolf_head.png",
+   "size": "256x256"
+  },
+  {
+   "key": "Tracks/coral_coast",
+   "file": "Tracks/coral_coast.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/crystal_caverns",
+   "file": "Tracks/crystal_caverns.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/foundry_loop",
+   "file": "Tracks/foundry_loop.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/frostbite_pass",
+   "file": "Tracks/frostbite_pass.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/grand_prix",
+   "file": "Tracks/grand_prix.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/greenfield_farm",
+   "file": "Tracks/greenfield_farm.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/harbor_run",
+   "file": "Tracks/harbor_run.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/jungle_temple",
+   "file": "Tracks/jungle_temple.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/neon_district",
+   "file": "Tracks/neon_district.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/pinewood_forest",
+   "file": "Tracks/pinewood_forest.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/savanna_sprint",
+   "file": "Tracks/savanna_sprint.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/skyline_ridge",
+   "file": "Tracks/skyline_ridge.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/sundown_canyon",
+   "file": "Tracks/sundown_canyon.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "UI/Bar_Fill",
+   "file": "UI/Bar_Fill.png",
+   "size": "512x32"
+  },
+  {
+   "key": "UI/Bar_Track",
+   "file": "UI/Bar_Track.png",
+   "size": "512x48"
+  },
+  {
+   "key": "UI/Btn_Blue",
+   "file": "UI/Btn_Blue.png",
+   "size": "376x128"
+  },
+  {
+   "key": "UI/Btn_DarkBlue",
+   "file": "UI/Btn_DarkBlue.png",
+   "size": "388x128"
+  },
+  {
+   "key": "UI/Btn_DarkRed",
+   "file": "UI/Btn_DarkRed.png",
+   "size": "392x128"
+  },
+  {
+   "key": "UI/Btn_Gold",
+   "file": "UI/Btn_Gold.png",
+   "size": "384x128"
+  },
+  {
+   "key": "UI/Btn_Grey",
+   "file": "UI/Btn_Grey.png",
+   "size": "396x128"
+  },
+  {
+   "key": "UI/Btn_GreyBlue",
+   "file": "UI/Btn_GreyBlue.png",
+   "size": "388x128"
+  },
+  {
+   "key": "UI/Btn_GreyRed",
+   "file": "UI/Btn_GreyRed.png",
+   "size": "384x128"
+  },
+  {
+   "key": "UI/Btn_Orange",
+   "file": "UI/Btn_Orange.png",
+   "size": "388x128"
+  },
+  {
+   "key": "UI/Btn_Red",
+   "file": "UI/Btn_Red.png",
+   "size": "388x128"
+  },
+  {
+   "key": "UI/Icon_Camera",
+   "file": "UI/Icon_Camera.png",
+   "size": "128x112"
+  },
+  {
+   "key": "UI/Icon_Coin",
+   "file": "UI/Icon_Coin.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Icon_Lock",
+   "file": "UI/Icon_Lock.png",
+   "size": "108x128"
+  },
+  {
+   "key": "UI/Icon_Pause",
+   "file": "UI/Icon_Pause.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Icon_Rear",
+   "file": "UI/Icon_Rear.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Icon_Settings",
+   "file": "UI/Icon_Settings.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Icon_Share",
+   "file": "UI/Icon_Share.png",
+   "size": "124x128"
+  },
+  {
+   "key": "UI/Icon_Star",
+   "file": "UI/Icon_Star.png",
+   "size": "128x124"
+  },
+  {
+   "key": "UI/Icon_Trophy",
+   "file": "UI/Icon_Trophy.png",
+   "size": "128x112"
+  },
+  {
+   "key": "UI/Pad_Boost",
+   "file": "UI/Pad_Boost.png",
+   "size": "256x236"
+  },
+  {
+   "key": "UI/Pad_Brake",
+   "file": "UI/Pad_Brake.png",
+   "size": "256x244"
+  },
+  {
+   "key": "UI/Pad_Drift",
+   "file": "UI/Pad_Drift.png",
+   "size": "256x248"
+  },
+  {
+   "key": "UI/Pad_Gun",
+   "file": "UI/Pad_Gun.png",
+   "size": "256x248"
+  },
+  {
+   "key": "UI/Pad_Missile",
+   "file": "UI/Pad_Missile.png",
+   "size": "256x236"
+  },
+  {
+   "key": "UI/Panel_Large",
+   "file": "UI/Panel_Large.png",
+   "size": "640x220"
+  },
+  {
+   "key": "UI/Panel_Small",
+   "file": "UI/Panel_Small.png",
+   "size": "640x260"
+  },
+  {
+   "key": "UI/Slider_Knob",
+   "file": "UI/Slider_Knob.png",
+   "size": "80x80"
+  },
+  {
+   "key": "UI/Tab_Blue",
+   "file": "UI/Tab_Blue.png",
+   "size": "292x96"
+  },
+  {
+   "key": "UI/Tab_Grey",
+   "file": "UI/Tab_Grey.png",
+   "size": "300x96"
+  },
+  {
+   "key": "UI/Tab_GreyDark",
+   "file": "UI/Tab_GreyDark.png",
+   "size": "300x96"
+  },
+  {
+   "key": "UI/Tab_GreyLight",
+   "file": "UI/Tab_GreyLight.png",
+   "size": "304x96"
+  },
+  {
+   "key": "UI/Tab_Orange",
+   "file": "UI/Tab_Orange.png",
+   "size": "288x96"
+  },
+  {
+   "key": "UI/Tab_Red",
+   "file": "UI/Tab_Red.png",
+   "size": "300x96"
+  },
+  {
+   "key": "UI/Toggle_Off",
+   "file": "UI/Toggle_Off.png",
+   "size": "196x96"
+  },
+  {
+   "key": "UI/Toggle_On",
+   "file": "UI/Toggle_On.png",
+   "size": "200x96"
+  }
+ ],
+ "sounds": [
+  "Audio/Sfx/Gunshot",
+  "Audio/Sfx/BulletImpact",
+  "Audio/Sfx/MissileLaunch",
+  "Audio/Sfx/Explosion",
+  "Audio/Sfx/MineDrop",
+  "Audio/Sfx/MineArm",
+  "Audio/Sfx/CarImpact",
+  "Audio/Sfx/WallImpact",
+  "Audio/Sfx/Boost",
+  "Audio/Sfx/DriftBonus",
+  "Audio/Sfx/LockOn",
+  "Audio/Sfx/Warning",
+  "Audio/Sfx/Empty",
+  "Audio/Sfx/Respawn",
+  "Audio/Sfx/Finish",
+  "Audio/Sfx/Pickup",
+  "Audio/Sfx/Emp",
+  "Audio/Ui/Click",
+  "Audio/Ui/Back",
+  "Audio/Ui/Purchase",
+  "Audio/Ui/Error",
+  "Audio/Ui/CountdownBeep",
+  "Audio/Ui/Go",
+  "Audio/Ui/LevelUp",
+  "Audio/Music/Menu",
+  "Audio/Music/Race"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "contentVersion": 1,
+  "tracks": [
+    { "id": "harbor_run", "name": "Harbor Run", "theme": "coastal", "laps": 4, "checkpoints": 16,
+      "halfWidth": 9, "runoff": 3, "bank": 0.5,
+      // A fast coastal circuit: long dockside straight, hairpin at the ferry terminal, a chicane through the
+      // container yard and a flowing return along the sea wall. [x, y, halfWidth, runoff, height]
+      "points": [
+        [0, 0, 9, 3, 0], [0, 200, 9, 3, 0], [0, 400, 9, 3, 1], [40, 490, 8.5, 3, 2], [140, 550, 8.5, 3, 4], [190.9, 560.1, 5, 3, 4.5],
+        [300, 565, 5, 3, 6], [460, 565, 5, 3, 8], [530.0, 556.3, 5, 3, 7.5], [590, 540, 8.5, 3, 7], [680, 480, 8, 2.5, 5], [700, 420, 7.5, 2.5, 4],
+        [665, 375, 7.5, 2.5, 3], [600, 370, 8, 2.5, 3], [530, 340, 7, 1.5, 2], [495, 290, 7, 1.5, 2], [530, 240, 7, 1.5, 2],
+        [620, 200, 8.5, 3, 2], [690, 120, 8.5, 3, 1], [700, 20, 8.5, 3, 1], [660, -70, 8.5, 3, 1], [560, -125, 9, 3, 0],
+        [420, -140, 9, 3, 0], [290, -120, 8.5, 3, 0], [210, -70, 8, 2.5, 0], [140, -110, 8, 2.5, 0], [70, -120, 8.5, 3, 0],
+        [15, -80, 9, 3, 0]
+      ],
+      // Service road cutting the container-yard chicane: shorter but narrow and twisty — a risk/reward line.
+      "shortcuts": [
+        { "name": "Service Road", "aiPreference": 0.7, "halfWidth": 5, "runoff": 1,
+          "points": [[600, 370, 6, 1, 3], [571, 350, 5, 1, 3], [558, 316, 4.5, 1, 2], [567, 289, 4.5, 1, 2], [567, 261, 4.5, 1, 2], [592, 230, 4.5, 1, 2], [620, 200, 6, 1, 2]] }
+      ],
+      // Repair (armour), ammo (secondary round + cooled gun) and turbo pickups; "at" is a fraction of the lap.
+      "pickups": [{ "kind": "turbo", "at": 0.075, "lanes": [-0.5, 0.5] }, { "kind": "repair", "at": 0.22, "lanes": [-0.4, 0.4] },
+        { "kind": "ammo", "at": 0.65, "lanes": [0] }, { "kind": "repair", "at": 0.78, "lanes": [0] }] ,
+      // Ramps: cross the lip fast to launch. In the air hold DRIFT to kickflip, steer to spin.
+      "loops": [{"at": 0.3032, "radius": 9, "length": 320}],
+      "jumps": [{ "at": 0.07, "power": 1.0 }, { "at": 0.76, "power": 1.2 }] }
+  ]
+}
