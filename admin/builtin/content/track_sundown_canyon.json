@@ -12,7 +12,7 @@
         [150, 30, 8, 3, 2], [120, -10, 8, 3, 1], [90, -70, 8, 3, 0], [50, -120, 8.5, 3, 0], [10, -110, 9, 3, 0]
       ],
       "shortcuts": [{"name": "Dry Wash", "aiPreference": 0.5, "halfWidth": 4.5, "runoff": 1, "points": [[58.9, 230.3, 6.0, 1, 4.5], [109.2, 242.3, 4.5, 1, 6.5], [161.3, 233.6, 4.5, 1, 8.3], [212.0, 215.4, 4.5, 1, 9.9], [259.1, 189.8, 4.5, 1, 9.4], [299.9, 156.9, 4.5, 1, 8.4], [328.9, 113.0, 6.0, 1, 6.0]]}],
-      "pickups": [{ "kind": "shield", "at": 0.275, "lanes": [0] }, { "kind": "turbo", "at": 0.12, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.36, "lanes": [0] },
+      "pickups": [{ "kind": "special", "at": 0.425, "lanes": [0] }, { "kind": "shield", "at": 0.275, "lanes": [0] }, { "kind": "turbo", "at": 0.12, "lanes": [-0.4, 0.4] }, { "kind": "repair", "at": 0.36, "lanes": [0] },
         { "kind": "ammo", "at": 0.5, "lanes": [-0.45, 0.45] }, { "kind": "turbo", "at": 0.875, "lanes": [0] }] ,
       // Ramps: cross the lip fast to launch. In the air hold DRIFT to kickflip, steer to spin.
       "jumps": [{ "at": 0.47, "power": 1.3 }] }

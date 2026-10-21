@@ -71,6 +71,28 @@
     { "id": "tailgunner", "name": "Tailgunner", "kind": "Hitscan", "slot": "Secondary", "rearward": true,
       "description": "Rear-facing shotgun. Five pellets a blast into whoever is glued to your bumper. Six shells.",
       "damage": 2.0, "pellets": 5, "fireInterval": 0.6, "ammo": 6, "reloadTime": 1.4, "range": 22, "spreadDegrees": 7,
-      "aimAssistDegrees": 9, "rangeFalloff": 0.3, "aiRole": "Defensive", "aiMaxRange": 18 }
+      "aimAssistDegrees": 9, "rangeFalloff": 0.3, "aiRole": "Defensive", "aiMaxRange": 18 },
+    // Special weapons: one-shot catch-up weapons from the purple special pickup (fire with B / the SPECIAL pad).
+    // "odds" = how likely the leader / a mid-pack racer / the last racer gets each one (blended by position).
+    { "id": "special.mortar", "name": "Sky Mortar", "kind": "Mortar", "slot": "Special",
+      "description": "Lobs a shell that homes in on the race leader and lands with a huge blast. Back-markers only.",
+      "damage": 45, "blastRadius": 7, "projectileSpeed": 40, "lifetime": 2.6, "odds": [0, 0.15, 1] },
+    { "id": "special.swarm", "name": "Hornet Swarm", "kind": "Homing", "slot": "Special",
+      "description": "Four mini-missiles, each already locked on a different racer ahead of you.",
+      "damage": 14, "pellets": 4, "projectileSpeed": 34, "lifetime": 4, "trackingStrength": 3.2, "blastRadius": 3.5,
+      "odds": [0, 0.6, 0.8] },
+    { "id": "special.afterburner", "name": "Afterburner", "kind": "Afterburner", "slot": "Special",
+      "description": "Three seconds of huge speed with a shield up. Anyone you ram gets wrecked.",
+      "damage": 30, "effectDuration": 3, "odds": [0.1, 0.6, 0.7] },
+    { "id": "special.shockwave", "name": "Mega Shockwave", "kind": "Emp", "slot": "Special",
+      "description": "A giant pulse: jams every rival within 35 m and fries their missiles and mines.",
+      "damage": 6, "blastRadius": 35, "effectDuration": 2.5, "odds": [0.3, 0.7, 0.3] },
+    { "id": "special.megamine", "name": "Mega Mine", "kind": "Mine", "slot": "Special",
+      "description": "A huge mine with a wide trigger, dropped behind you. Leaders love it.",
+      "damage": 40, "blastRadius": 9, "triggerRadius": 3.5, "armTime": 0.6, "lifetime": 30, "maxActive": 1,
+      "odds": [0.8, 0.4, 0.05] },
+    { "id": "special.ward", "name": "Missile Ward", "kind": "Ward", "slot": "Special",
+      "description": "Destroys every missile and mortar aimed at you, then shields you for three seconds.",
+      "effectDuration": 3, "odds": [1, 0.2, 0] }
   ]
 }

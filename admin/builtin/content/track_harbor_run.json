@@ -19,7 +19,7 @@
           "points": [[600, 370, 6, 1, 3], [571, 350, 5, 1, 3], [558, 316, 4.5, 1, 2], [567, 289, 4.5, 1, 2], [567, 261, 4.5, 1, 2], [592, 230, 4.5, 1, 2], [620, 200, 6, 1, 2]] }
       ],
       // Repair (armour), ammo (secondary round + cooled gun) and turbo pickups; "at" is a fraction of the lap.
-      "pickups": [{ "kind": "shield", "at": 0.4, "lanes": [0] }, { "kind": "turbo", "at": 0.075, "lanes": [-0.5, 0.5] }, { "kind": "repair", "at": 0.22, "lanes": [-0.4, 0.4] },
+      "pickups": [{ "kind": "special", "at": 0.82, "lanes": [0] }, { "kind": "shield", "at": 0.4, "lanes": [0] }, { "kind": "turbo", "at": 0.075, "lanes": [-0.5, 0.5] }, { "kind": "repair", "at": 0.22, "lanes": [-0.4, 0.4] },
         { "kind": "ammo", "at": 0.65, "lanes": [0] }, { "kind": "repair", "at": 0.78, "lanes": [0] }] ,
       // Ramps: cross the lip fast to launch. In the air hold DRIFT to kickflip, steer to spin.
       "loops": [{"at": 0.3032, "radius": 9, "length": 320}],
