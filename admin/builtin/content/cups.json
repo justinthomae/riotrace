@@ -20,12 +20,13 @@
         { "track": "neon_district", "mode": "CombatRace", "laps": 3 }
       ] },
     { "id": "coast_cup", "name": "Sun & Stunts Cup", "level": 5, "difficulty": "Normal",
-      "description": "Beaches, canyons and mountain passes. Big air and secret routes reward the brave.",
+      "description": "Beaches, canyons, mountain passes and the island spiral. Big air and secret routes reward the brave.",
       "prizeCredits": [4500, 2700, 1500], "prizeXp": 1000,
       "rounds": [
         { "track": "coral_coast", "mode": "CombatRace", "laps": 3 },
         { "track": "sundown_canyon", "mode": "PureRace", "laps": 3 },
         { "track": "skyline_ridge", "mode": "CombatRace", "laps": 2 },
+        { "track": "paradise_spiral", "mode": "PureRace", "laps": 3 },
         { "track": "coral_coast", "mode": "PureRace", "laps": 4 }
       ] },
     { "id": "grudge_cup", "name": "Grudge Cup", "level": 6, "difficulty": "Hard",

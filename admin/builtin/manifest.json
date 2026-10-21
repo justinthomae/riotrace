@@ -14,6 +14,7 @@
   "track_harbor_run",
   "track_jungle_temple",
   "track_neon_district",
+  "track_paradise_spiral",
   "track_pinewood_forest",
   "track_savanna_sprint",
   "track_skyline_ridge",
@@ -176,6 +177,11 @@
   {
    "key": "Tracks/neon_district",
    "file": "Tracks/neon_district.jpg",
+   "size": "640x360"
+  },
+  {
+   "key": "Tracks/paradise_spiral",
+   "file": "Tracks/paradise_spiral.jpg",
    "size": "640x360"
   },
   {
