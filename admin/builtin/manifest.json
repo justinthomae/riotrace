@@ -20,6 +20,7 @@
   "track_savanna_sprint",
   "track_skyline_ridge",
   "track_sundown_canyon",
+  "track_sunloop_bay",
   "unlocks",
   "vehicles",
   "weapons"
@@ -214,6 +215,11 @@
    "key": "Tracks/sundown_canyon",
    "file": "Tracks/sundown_canyon.jpg",
    "size": "1280x720"
+  },
+  {
+   "key": "Tracks/sunloop_bay",
+   "file": "Tracks/sunloop_bay.jpg",
+   "size": "640x360"
   },
   {
    "key": "UI/Bar_Fill",

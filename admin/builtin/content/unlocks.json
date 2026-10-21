@@ -33,6 +33,7 @@
     { "id": "skyline_ridge", "level": 7, "cost": 3000 },
     { "id": "coral_coast", "level": 4, "cost": 1600 },
     { "id": "paradise_spiral", "level": 5, "cost": 2400 },
+    { "id": "sunloop_bay", "level": 4, "cost": 1800 },
     { "id": "neon_corkscrew", "level": 6, "cost": 2700 },
     { "id": "grand_prix", "level": 2, "cost": 600 },
     { "id": "greenfield_farm", "level": 2, "cost": 800 },

@@ -23,7 +23,7 @@
       "description": "Beaches, canyons, mountain passes and the island spiral. Big air and secret routes reward the brave.",
       "prizeCredits": [4500, 2700, 1500], "prizeXp": 1000,
       "rounds": [
-        { "track": "coral_coast", "mode": "CombatRace", "laps": 3 },
+        { "track": "sunloop_bay", "mode": "CombatRace", "laps": 3 },
         { "track": "sundown_canyon", "mode": "PureRace", "laps": 3 },
         { "track": "skyline_ridge", "mode": "CombatRace", "laps": 2 },
         { "track": "paradise_spiral", "mode": "PureRace", "laps": 3 },
