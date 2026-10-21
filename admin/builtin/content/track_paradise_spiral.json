@@ -20,6 +20,8 @@
       "pickups": [{ "kind": "turbo", "at": 0.05, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.12, "lanes": [0] },
         { "kind": "repair", "at": 0.64, "lanes": [-0.4, 0.4] }, { "kind": "ammo", "at": 0.76, "lanes": [0] }, { "kind": "turbo", "at": 0.9, "lanes": [0] }],
       "jumps": [{ "at": 0.1, "power": 1.1 }],
+      // Track card: from beside the beach straight towards the spiral.
+      "card": { "at": 0.03, "distance": 150, "height": 55, "side": -1 },
       // Rock islands [x, y, radius, height]: one in the eye of the spiral, the rest offshore.
       "islands": [[200, 380, 34, 34], [-170, 300, 40, 30], [430, 300, 36, 24], [60, 300, 22, 14], [470, -120, 30, 20], [-150, -60, 26, 16]] }
   ]
