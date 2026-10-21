@@ -19,10 +19,28 @@
 <meta property="og:url" content="https://riotrace.grudgematchgames.com/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  html, body { background: #0a080a url('rr-keyart-wide.webp') center / cover no-repeat; }
-  @media (orientation: portrait) { html, body { background-image: url('rr-keyart-tall.webp'); } }
+  html { min-height: 100%; background: #0a080a url('rr-keyart-wide.webp') center / cover no-repeat fixed; }
+  body { background: transparent !important; }
+  @media (orientation: portrait) { html { background-image: url('rr-keyart-tall.webp'); } }
   /* The key art carries the logo, so Unity's own loading logo is hidden rather than replaced. */
   #unity-logo { display: none !important; }
+  /* Riot Race loader: the key art shows through the canvas until the game draws its first frame. */
+  #unity-container, #unity-canvas { background: transparent !important; }
+  #unity-loading-bar { top: auto !important; bottom: 7vh !important; transform: translateX(-50%) !important;
+    width: min(560px, 84vw); padding: 14px 20px 16px; border-radius: 18px; box-sizing: border-box;
+    background: rgba(10, 8, 10, 0.62); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45); text-align: center;
+    font: 800 15px/1.3 "Trebuchet MS", system-ui, sans-serif; color: #fff; letter-spacing: 0.04em; }
+  #rr-load-title { display: flex; justify-content: space-between; font-size: 18px; text-shadow: 0 2px 0 #000; }
+  #rr-load-title b { color: #ffb03a; }
+  #unity-progress-bar-empty { width: 100% !important; height: 22px !important; margin: 10px 0 0 !important; float: none !important;
+    background: #1b1620 !important; border: 3px solid #fff; border-radius: 14px; overflow: hidden; box-sizing: border-box; }
+  #unity-progress-bar-full { height: 100% !important; float: none !important; border-radius: 10px; transition: width 0.25s;
+    background: repeating-linear-gradient(-45deg, #ff7a12 0 14px, #ffb03a 14px 28px) !important;
+    background-size: 40px 40px !important; animation: rr-stripes 0.8s linear infinite; }
+  @keyframes rr-stripes { to { background-position: 40px 0; } }
+  #rr-load-logo { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); width: min(400px, 76vw);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5)); pointer-events: none; }
+  #rr-load-tip { margin-top: 10px; font-weight: 600; font-size: 14px; color: #e8e2f4; min-height: 1.3em; }
 </style>
 </head>
   <body>
@@ -30,9 +48,20 @@
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
+        <img id="rr-load-logo" src="rr-logo.webp" alt="Riot Race"><div id="rr-load-title"><span>LOADING</span><b id="rr-load-pct">0%</b></div><div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
-        </div>
+        </div><div id="rr-load-tip"></div>
+<script>
+  (function () {
+    var tips = ["Drift through corners to fill your turbo.", "Tap BOOST right at GO for a perfect start.",
+      "Drift-dodge a missile lock to break it.", "Grab wrenches to repair, cartridges for ammo.",
+      "Secret routes hide off the racing line.", "Wreck your grudge rival to settle the score."];
+    var i = Math.floor(Math.random() * tips.length), el = document.getElementById("rr-load-tip");
+    function next() { el.textContent = tips[i++ % tips.length]; }
+    next(); setInterval(next, 3500);
+  })();
+</script>
+
       </div>
       <div id="unity-warning"> </div>
     </div>
@@ -74,16 +103,16 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/6fbb922081935f8623b996fb2c3c5118.loader.js";
+      var loaderUrl = buildUrl + "/beb3eca2344704556c3e295a2cf1dcc7.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/b7ffad7d9aadec0e31eaa7b9ea9cc8c8.data.unityweb",
-        frameworkUrl: buildUrl + "/6ee8ae3af92a8ac7d25e6b8b6e27b5e3.framework.js.unityweb",
-        codeUrl: buildUrl + "/29e5f9e14685c76d6a78b166623775fd.wasm.unityweb",
+        dataUrl: buildUrl + "/9519d133aede626960cf1854b085396f.data.unityweb",
+        frameworkUrl: buildUrl + "/609f9bd6ef047a11fca6023068083770.framework.js.unityweb",
+        codeUrl: buildUrl + "/06f71b6cbde713bb31cefb9678905643.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Grudge Match Games",
         productName: "Riot Race",
-        productVersion: "15ac9a8",
+        productVersion: "00f58e4",
         showBanner: unityShowBanner,
       };
 
@@ -108,7 +137,7 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
+          progressBarFull.style.width = 100 * progress + "%"; document.getElementById("rr-load-pct").textContent = Math.round(100 * progress) + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
         }).catch((message) => {
