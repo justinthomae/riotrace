@@ -342,14 +342,34 @@
    "size": "256x248"
   },
   {
+   "key": "UI/Pad_Emp",
+   "file": "UI/Pad_Emp.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Pad_Gun",
    "file": "UI/Pad_Gun.png",
    "size": "256x248"
   },
   {
+   "key": "UI/Pad_Mine",
+   "file": "UI/Pad_Mine.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Pad_Missile",
    "file": "UI/Pad_Missile.png",
    "size": "256x236"
+  },
+  {
+   "key": "UI/Pad_RearGun",
+   "file": "UI/Pad_RearGun.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Pad_Slick",
+   "file": "UI/Pad_Slick.png",
+   "size": "256x256"
   },
   {
    "key": "UI/Panel_Large",
