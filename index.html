@@ -41,12 +41,13 @@
   /* Top-left, in the key art's sky (owner); outside the loading bar so it is placed against the screen. */
   #rr-load-logo { position: fixed; top: max(16px, 3vh); left: max(16px, 2.5vw); width: min(440px, 46vw); z-index: 2;
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5)); pointer-events: none; }
-  @media (orientation: portrait) { #rr-load-logo { left: 50%; transform: translateX(-50%); width: min(440px, 84vw); } }
+  /* Portrait: centred on the screen, over the karts (owner). */
+  @media (orientation: portrait) { #rr-load-logo { top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(520px, 88vw); } }
   #rr-load-tip { margin-top: 10px; font-weight: 600; font-size: 14px; color: #e8e2f4; min-height: 1.3em; }
 </style>
 </head>
   <body>
-    <img id="rr-load-logo" src="rr-logo.webp" alt="Riot Race">
+    <img id="rr-load-logo" src="rr-logo.webp?v=7adf506021" alt="Riot Race">
     <div id="unity-container">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -114,13 +115,13 @@
       var loaderUrl = buildUrl + "/950c0bbf43461118eeb8ba47c7b78eb8.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/93feea203e7c0565e3ff64f8d6ecf94b.data.unityweb",
+        dataUrl: buildUrl + "/9f76ae04be2b58825dbd5f33509a3c54.data.unityweb",
         frameworkUrl: buildUrl + "/279df9acbdd7724549c3a9ed594ab18e.framework.js.unityweb",
         codeUrl: buildUrl + "/a4b03babf0810a3de16529436f650405.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Grudge Match Games",
         productName: "Riot Race",
-        productVersion: "743ab9f",
+        productVersion: "1fcb960",
         showBanner: unityShowBanner,
       };
 
