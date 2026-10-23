@@ -21,6 +21,7 @@
   "track_skyline_ridge",
   "track_sundown_canyon",
   "track_sunloop_bay",
+  "track_tempest_coast",
   "unlocks",
   "vehicles",
   "weapons"
@@ -225,6 +226,11 @@
    "key": "Tracks/sunloop_bay",
    "file": "Tracks/sunloop_bay.jpg",
    "size": "1280x720"
+  },
+  {
+   "key": "Tracks/tempest_coast",
+   "file": "Tracks/tempest_coast.jpg",
+   "size": "640x360"
   },
   {
    "key": "UI/Bar_Fill",
