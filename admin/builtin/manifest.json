@@ -347,6 +347,11 @@
    "size": "256x256"
   },
   {
+   "key": "UI/Pad_Frost",
+   "file": "UI/Pad_Frost.png",
+   "size": "256x250"
+  },
+  {
    "key": "UI/Pad_Gun",
    "file": "UI/Pad_Gun.png",
    "size": "256x248"
