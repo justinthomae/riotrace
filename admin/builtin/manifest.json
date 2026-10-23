@@ -354,7 +354,7 @@
   {
    "key": "UI/Pad_Mine",
    "file": "UI/Pad_Mine.png",
-   "size": "256x256"
+   "size": "256x251"
   },
   {
    "key": "UI/Pad_Missile",
@@ -369,7 +369,7 @@
   {
    "key": "UI/Pad_Slick",
    "file": "UI/Pad_Slick.png",
-   "size": "256x256"
+   "size": "256x249"
   },
   {
    "key": "UI/Panel_Large",
