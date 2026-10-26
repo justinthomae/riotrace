@@ -76,6 +76,16 @@
     {"id": "cosmetic.rim.mesh", "kind": "rim", "name": "Mesh", "style": "mesh", "level": 4, "cost": 500},
     {"id": "cosmetic.rim.disc", "kind": "rim", "name": "Aero Disc", "style": "disc", "level": 5, "cost": 600},
     {"id": "cosmetic.rim.beadlock", "kind": "rim", "name": "Beadlock", "style": "beadlock", "level": 6, "cost": 800},
-    {"id": "cosmetic.rim.turbo", "kind": "rim", "name": "Turbo Fan", "style": "turbo", "level": 8, "cost": 1200}
+    {"id": "cosmetic.rim.turbo", "kind": "rim", "name": "Turbo Fan", "style": "turbo", "level": 8, "cost": 1200},
+    {"id": "cosmetic.decal.none", "kind": "decal", "name": "No Stickers", "style": "none", "starter": true},
+    {"id": "cosmetic.decal.checkers", "kind": "decal", "name": "Checkered Flag", "style": "checkers", "starter": true},
+    {"id": "cosmetic.decal.pinstripe", "kind": "decal", "name": "Pinstripes", "style": "pinstripe", "level": 2, "cost": 250},
+    {"id": "cosmetic.decal.number", "kind": "decal", "name": "Race Numbers", "style": "number", "level": 2, "cost": 300},
+    {"id": "cosmetic.decal.stars", "kind": "decal", "name": "Star Burst", "style": "stars", "level": 3, "cost": 400},
+    {"id": "cosmetic.decal.bolts", "kind": "decal", "name": "Lightning Bolts", "style": "bolts", "level": 4, "cost": 500},
+    {"id": "cosmetic.decal.flames", "kind": "decal", "name": "Hot Rod Flames", "style": "flames", "level": 5, "cost": 700},
+    {"id": "cosmetic.decal.sponsor", "kind": "decal", "name": "Sponsor Pack", "style": "sponsor", "level": 6, "cost": 800},
+    {"id": "cosmetic.decal.shark", "kind": "decal", "name": "Shark Teeth", "style": "shark", "level": 7, "cost": 1000},
+    {"id": "cosmetic.decal.tribal", "kind": "decal", "name": "Tribal Swirls", "style": "tribal", "level": 8, "cost": 1200}
   ]
 }
