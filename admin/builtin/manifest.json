@@ -436,6 +436,21 @@
    "key": "UI/Toggle_On",
    "file": "UI/Toggle_On.png",
    "size": "200x96"
+  },
+  {
+   "key": "UI/Weapon_rattler",
+   "file": "UI/Weapon_rattler.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_seeker",
+   "file": "UI/Weapon_seeker.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_tripwire",
+   "file": "UI/Weapon_tripwire.png",
+   "size": "256x256"
   }
  ],
  "sounds": [
