@@ -444,8 +444,23 @@
    "size": "256x256"
   },
   {
+   "key": "UI/Weapon_scatter",
+   "file": "UI/Weapon_scatter.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_seeker",
    "file": "UI/Weapon_seeker.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_slick",
+   "file": "UI/Weapon_slick.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_stinger",
+   "file": "UI/Weapon_stinger.png",
    "size": "256x256"
   },
   {
