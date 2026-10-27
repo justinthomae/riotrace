@@ -439,6 +439,16 @@
    "size": "200x96"
   },
   {
+   "key": "UI/Weapon_emp",
+   "file": "UI/Weapon_emp.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_frost",
+   "file": "UI/Weapon_frost.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_rattler",
    "file": "UI/Weapon_rattler.png",
    "size": "256x256"
@@ -461,6 +471,11 @@
   {
    "key": "UI/Weapon_stinger",
    "file": "UI/Weapon_stinger.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_thumper",
+   "file": "UI/Weapon_thumper.png",
    "size": "256x256"
   },
   {
