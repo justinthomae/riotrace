@@ -439,6 +439,11 @@
    "size": "200x96"
   },
   {
+   "key": "UI/Weapon_buzzsaw",
+   "file": "UI/Weapon_buzzsaw.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_emp",
    "file": "UI/Weapon_emp.png",
    "size": "256x256"
@@ -446,6 +451,16 @@
   {
    "key": "UI/Weapon_frost",
    "file": "UI/Weapon_frost.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_hornet",
+   "file": "UI/Weapon_hornet.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_longbow",
+   "file": "UI/Weapon_longbow.png",
    "size": "256x256"
   },
   {
@@ -471,6 +486,11 @@
   {
    "key": "UI/Weapon_stinger",
    "file": "UI/Weapon_stinger.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_swarm",
+   "file": "UI/Weapon_swarm.png",
    "size": "256x256"
   },
   {
