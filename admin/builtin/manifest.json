@@ -234,6 +234,26 @@
    "size": "1280x720"
   },
   {
+   "key": "UI/Arrow_Grey_Left",
+   "file": "UI/Arrow_Grey_Left.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Arrow_Grey_Right",
+   "file": "UI/Arrow_Grey_Right.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Arrow_Orange_Left",
+   "file": "UI/Arrow_Orange_Left.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Arrow_Orange_Right",
+   "file": "UI/Arrow_Orange_Right.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Bar_Fill",
    "file": "UI/Bar_Fill.png",
    "size": "512x32"
