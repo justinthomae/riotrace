@@ -464,6 +464,11 @@
    "size": "256x256"
   },
   {
+   "key": "UI/Weapon_magnet",
+   "file": "UI/Weapon_magnet.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_rattler",
    "file": "UI/Weapon_rattler.png",
    "size": "256x256"
@@ -479,8 +484,18 @@
    "size": "256x256"
   },
   {
+   "key": "UI/Weapon_shockwave",
+   "file": "UI/Weapon_shockwave.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_slick",
    "file": "UI/Weapon_slick.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_special_mortar",
+   "file": "UI/Weapon_special_mortar.png",
    "size": "256x256"
   },
   {
