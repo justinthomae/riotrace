@@ -494,8 +494,33 @@
    "size": "256x256"
   },
   {
+   "key": "UI/Weapon_special_afterburner",
+   "file": "UI/Weapon_special_afterburner.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_special_megamine",
+   "file": "UI/Weapon_special_megamine.png",
+   "size": "256x256"
+  },
+  {
    "key": "UI/Weapon_special_mortar",
    "file": "UI/Weapon_special_mortar.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_special_shockwave",
+   "file": "UI/Weapon_special_shockwave.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_special_swarm",
+   "file": "UI/Weapon_special_swarm.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_special_ward",
+   "file": "UI/Weapon_special_ward.png",
    "size": "256x256"
   },
   {
@@ -506,6 +531,11 @@
   {
    "key": "UI/Weapon_swarm",
    "file": "UI/Weapon_swarm.png",
+   "size": "256x256"
+  },
+  {
+   "key": "UI/Weapon_tailgunner",
+   "file": "UI/Weapon_tailgunner.png",
    "size": "256x256"
   },
   {
