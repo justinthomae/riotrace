@@ -596,5 +596,13 @@
   "Audio/Ui/LevelUp",
   "Audio/Music/Menu",
   "Audio/Music/Race"
+ ],
+ "fonts": [
+  "RiotRace-Body-Fredoka",
+  "RiotRace-Body-Quicksand",
+  "RiotRace-Body",
+  "RiotRace-Display-Bangers",
+  "RiotRace-Display-Luckiest",
+  "RiotRace-Display"
  ]
 }

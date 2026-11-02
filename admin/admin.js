@@ -142,7 +142,9 @@ async function onSession(session) {
   $("#tabs").hidden = false;
   await loadBuiltin();
   await Promise.all([loadLive(), loadAssets()]);
-  showTab(localStorage.getItem("gm.admin.tab") || "content");
+  let tab = "dashboard";
+  try { tab = localStorage.getItem("gm.admin.tab") || tab; } catch (e) { /* private mode */ }
+  showTab(document.querySelector(`[data-panel="${tab}"]`) ? tab : "dashboard");
 }
 
 async function loadBuiltin() {
@@ -162,7 +164,9 @@ function showTab(tab) {
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
   document.querySelectorAll("[data-panel]").forEach(p => p.hidden = p.dataset.panel !== tab);
   const panel = $(`[data-panel="${tab}"]`);
-  ({ content: renderContent, economy: renderEconomy, maps: renderMaps, characters: renderCharacters, assets: renderAssets, players: renderPlayers, log: renderLog })[tab](panel);
+  if (tab !== "dashboard") clearInterval(dashTimer);
+  ({ dashboard: renderDashboard, players: renderUsers, theme: renderTheme, content: renderContent, economy: renderEconomy, maps: renderMaps,
+     characters: renderCharacters, assets: renderAssets, log: renderLog })[tab](panel);
 }
 
 // ------------------------------------------------------------------ content (raw JSON documents)
@@ -443,6 +447,12 @@ function imageFor(key) {
 
 async function uploadAsset(key, file, kind) {
   if (!file) return false;
+  if (kind === "image") {
+    // Frame it to the built-in picture's size (thumbnails, logos, icons) before it goes up.
+    const built = (state.manifest.images || []).find(i => i.key === key);
+    file = await fitImage(file, built && built.size);
+    if (!file) return false;
+  }
   const ext = (file.name.split(".").pop() || "").toLowerCase();
   if (kind === "image" && !["png", "jpg", "jpeg", "webp"].includes(ext)) { toast("Pictures must be PNG, JPEG or WebP.", true); return false; }
   if (kind === "audio" && !["mp3", "wav", "ogg"].includes(ext)) { toast("Sounds must be MP3, WAV or OGG.", true); return false; }
@@ -514,87 +524,6 @@ function parseSave(text) {
     const env = JSON.parse(text);
     return JSON.parse(env.data || "{}");
   } catch (e) { return {}; }
-}
-
-async function renderPlayers(panel) {
-  panel.innerHTML = `<div class="card"><h2>Players</h2><p class="muted">Loading…</p></div>`;
-  const [players, saves, bans, grants] = await Promise.all([
-    sb.from("rr_players").select("user_id,name,avatar,status,updated_at").order("updated_at", { ascending: false }).limit(500),
-    sb.from("rr_saves").select("user_id,profile,saved_at").limit(1000),
-    sb.from("rr_bans").select("*"),
-    sb.from("rr_grants").select("*").order("created_at", { ascending: false }).limit(200),
-  ]);
-  for (const r of [players, saves, bans, grants]) if (fail(r.error, "Couldn't load players")) return;
-  const save = Object.fromEntries(saves.data.map(s => [s.user_id, parseSave(s.profile)]));
-  const ban = Object.fromEntries(bans.data.map(b => [b.user_id, b]));
-  const names = Object.fromEntries(players.data.map(p => [p.user_id, p.name]));
-  const rows = players.data.slice();
-  for (const id of Object.keys(save)) if (!names[id]) rows.push({ user_id: id, name: save[id].name || "(no profile)", status: "" });
-  const banned = b => b && (!b.until || new Date(b.until) > new Date());
-  panel.innerHTML = `
-    <div class="card">
-      <h2>Players</h2>
-      <div class="row"><label>Search <input id="p-search" placeholder="Name or id"></label></div>
-      <table><thead><tr><th></th><th>Racer</th><th>Level</th><th>Credits</th><th>Last seen</th><th>Status</th><th></th></tr></thead>
-      <tbody>${rows.map(p => {
-        const s = save[p.user_id] || {}, b = ban[p.user_id];
-        return `<tr data-id="${esc(p.user_id)}" data-search="${esc((p.name + " " + p.user_id).toLowerCase())}">
-          <td>${p.avatar && /^https?:/.test(p.avatar) ? `<img class="av" src="${esc(p.avatar)}" alt="">` : ""}</td>
-          <td><strong>${esc(p.name)}</strong><br><span class="muted key">${esc(p.user_id)}</span></td>
-          <td>${esc(s.level ?? "")}</td><td>${s.credits != null ? Number(s.credits).toLocaleString() : ""}</td>
-          <td>${p.updated_at ? new Date(p.updated_at).toLocaleString() : ""}</td>
-          <td>${banned(b) ? `<span class="tag off">banned${b.until ? " until " + new Date(b.until).toLocaleDateString() : ""}</span>` : esc(p.status || "")}</td>
-          <td class="row"><button data-gift>Gift</button>${banned(b) ? `<button data-unban>Unban</button>` : `<button class="danger" data-ban>Ban</button>`}</td></tr>`;
-      }).join("")}</tbody></table>
-    </div>
-    <div class="card"><h3>Recent gifts</h3>
-      <table><thead><tr><th>Player</th><th>Credits</th><th>XP</th><th>Note</th><th>Sent</th><th>Collected</th><th></th></tr></thead><tbody>
-      ${grants.data.map(g => `<tr><td>${esc(names[g.user_id] || g.user_id)}</td><td>${g.credits}</td><td>${g.xp}</td><td>${esc(g.note)}</td>
-        <td>${new Date(g.created_at).toLocaleString()}</td><td>${g.claimed_at ? new Date(g.claimed_at).toLocaleString() : "waiting"}</td>
-        <td>${g.claimed_at ? "" : `<button class="danger" data-cancel="${esc(g.id)}">Cancel</button>`}</td></tr>`).join("")}
-      </tbody></table></div>`;
-  $("#p-search").addEventListener("input", e => {
-    const q = e.target.value.trim().toLowerCase();
-    panel.querySelectorAll("tbody tr[data-search]").forEach(tr => tr.hidden = q && !tr.dataset.search.includes(q));
-  });
-  panel.querySelectorAll("tr[data-id]").forEach(tr => {
-    const id = tr.dataset.id, who = names[id] || id;
-    const gift = $("[data-gift]", tr), banBtn = $("[data-ban]", tr), unban = $("[data-unban]", tr);
-    gift.addEventListener("click", async () => {
-      const credits = parseInt(prompt(`Credits to give ${who}? (negative takes credits away)`, "1000") || "0", 10) || 0;
-      const xp = Math.max(0, parseInt(prompt("XP to give?", "0") || "0", 10) || 0);
-      if (!credits && !xp) return;
-      const note = (prompt("Message shown to the player (optional)", "Thanks for racing!") || "").slice(0, 200);
-      const { error } = await sb.from("rr_grants").insert({ user_id: id, credits, xp, note, created_by: state.user.id });
-      if (fail(error, "Gift failed")) return;
-      await log("player.gift", { user_id: id, credits, xp });
-      toast(`Gift sent. ${who} collects it next time they're at the main menu.`);
-      renderPlayers(panel);
-    });
-    if (banBtn) banBtn.addEventListener("click", async () => {
-      const reason = prompt(`Ban ${who} from online play and leaderboards. Reason?`);
-      if (reason === null) return;
-      const days = prompt("For how many days? (leave empty for no end date)", "7");
-      if (days === null) return;
-      const until = days.trim() ? new Date(Date.now() + parseFloat(days) * 86400000).toISOString() : null;
-      const { error } = await sb.from("rr_bans").upsert({ user_id: id, reason: reason.slice(0, 300), until, created_by: state.user.id });
-      if (fail(error, "Ban failed")) return;
-      await log("player.ban", { user_id: id, until, reason });
-      renderPlayers(panel);
-    });
-    if (unban) unban.addEventListener("click", async () => {
-      const { error } = await sb.from("rr_bans").delete().eq("user_id", id);
-      if (fail(error)) return;
-      await log("player.unban", { user_id: id });
-      renderPlayers(panel);
-    });
-  });
-  panel.querySelectorAll("[data-cancel]").forEach(b => b.addEventListener("click", async () => {
-    const { error } = await sb.from("rr_grants").delete().eq("id", b.dataset.cancel).is("claimed_at", null);
-    if (fail(error)) return;
-    await log("player.gift_cancel", { id: b.dataset.cancel });
-    renderPlayers(panel);
-  }));
 }
 
 // ------------------------------------------------------------------ log

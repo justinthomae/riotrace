@@ -12,12 +12,14 @@
 <header>
   <div class="brand">GRUDGE MATCH <span>ADMIN</span></div>
   <nav id="tabs" hidden>
+    <button data-tab="dashboard">Dashboard</button>
+    <button data-tab="players">Users</button>
+    <button data-tab="theme">Theme</button>
     <button data-tab="content">Content</button>
     <button data-tab="economy">Economy</button>
     <button data-tab="maps">Maps</button>
     <button data-tab="characters">Characters</button>
     <button data-tab="assets">Art &amp; sound</button>
-    <button data-tab="players">Players</button>
     <button data-tab="log">Log</button>
   </nav>
   <div id="who"></div>
@@ -48,6 +50,8 @@
   <div id="app" hidden>
     <p class="game-pick">Game: <select id="game"><option value="riotrace">Riot Race</option></select>
       <span class="muted">Changes reach players within two minutes, at the menus (never mid-race).</span></p>
+    <section data-panel="dashboard"></section>
+    <section data-panel="theme"></section>
     <section data-panel="content"></section>
     <section data-panel="economy"></section>
     <section data-panel="maps"></section>
@@ -60,6 +64,8 @@
 <div id="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="vendor/chart-4.4.1.umd.js"></script>
 <script src="admin.js"></script>
+<script src="admin-dash.js"></script>
 </body>
 </html>
