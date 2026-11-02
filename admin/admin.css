@@ -112,3 +112,8 @@ button.mini { padding: 2px 8px; }
 .fit-card { width: min(760px, 100%); max-height: 100%; overflow: auto; margin: 0; }
 .fit-canvas { width: 100%; max-height: 55vh; object-fit: contain; background: repeating-conic-gradient(#222 0 25%, #333 0 50%) 0 0 / 20px 20px; border-radius: 8px; cursor: grab; touch-action: none; display: block; }
 [hidden] { display: none !important; }
+button.oauth { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; border: 0; flex: 1; justify-content: center; }
+button.oauth img { width: 20px; height: 20px; }
+button.oauth.google { background: #fff; color: #1f1f1f; }
+button.oauth.facebook { background: #1877f2; color: #fff; }
+button.oauth.discord { background: #5865f2; color: #fff; }

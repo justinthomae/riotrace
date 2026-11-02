@@ -115,10 +115,14 @@ async function start() {
     const { error } = await sb.auth.signInWithPassword({ email: $("#email").value.trim(), password: $("#password").value });
     $("#signin-msg").textContent = error ? error.message : "";
   });
-  for (const p of ["google", "facebook"]) {
+  for (const p of ["google", "facebook", "discord"]) {
     $("#" + p).addEventListener("click", () => sb.auth.signInWithOAuth({ provider: p, options: { redirectTo: location.origin + location.pathname } }));
   }
   $("#signout2").addEventListener("click", () => sb.auth.signOut());
+  // Only offer the sign-in providers the project has switched on (Discord needs setting up in Supabase first).
+  fetch(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: ANON_KEY } }).then(r => r.ok ? r.json() : null).then(s => {
+    if (s && s.external) for (const p of ["google", "facebook", "discord"]) $("#" + p).hidden = !s.external[p];
+  }).catch(() => { $("#discord").hidden = true; });
   document.querySelectorAll("#tabs button").forEach(b => b.addEventListener("click", () => showTab(b.dataset.tab)));
   sb.auth.onAuthStateChange((_event, session) => setTimeout(() => onSession(session), 0));
   const { data } = await sb.auth.getSession();

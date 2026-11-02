@@ -354,6 +354,21 @@
    "size": "128x112"
   },
   {
+   "key": "UI/Login_Discord",
+   "file": "UI/Login_Discord.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Login_Facebook",
+   "file": "UI/Login_Facebook.png",
+   "size": "128x128"
+  },
+  {
+   "key": "UI/Login_Google",
+   "file": "UI/Login_Google.png",
+   "size": "128x128"
+  },
+  {
    "key": "UI/Pad_Boost",
    "file": "UI/Pad_Boost.png",
    "size": "256x236"
