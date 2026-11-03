@@ -610,7 +610,12 @@
   "Audio/Ui/Go",
   "Audio/Ui/LevelUp",
   "Audio/Music/Menu",
-  "Audio/Music/Race"
+  "Audio/Music/Race",
+  "Audio/Music/Race2",
+  "Audio/Music/Battle",
+  "Audio/Music/Win",
+  "Audio/Music/Lose",
+  "Audio/Engine/Loop"
  ],
  "fonts": [
   "RiotRace-Body-Fredoka",

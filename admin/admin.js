@@ -488,7 +488,7 @@ async function resetAsset(key) {
 let assetFilter = "Branding";
 function renderAssets(panel) {
   const m = state.manifest;
-  const groups = [...new Set(m.images.map(i => i.key.split("/")[0])), "Audio/Sfx", "Audio/Ui", "Audio/Music"];
+  const groups = [...new Set(m.images.map(i => i.key.split("/")[0])), "Audio/Sfx", "Audio/Ui", "Audio/Music", "Audio/Engine"];
   const slots = assetFilter.startsWith("Audio")
     ? m.sounds.filter(k => k.startsWith(assetFilter + "/")).map(k => ({ key: k, kind: "audio" }))
     : m.images.filter(i => i.key.split("/")[0] === assetFilter).map(i => ({ key: i.key, kind: "image", size: i.size }));
