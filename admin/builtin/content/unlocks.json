@@ -13,7 +13,7 @@
     { "id": "mender", "level": 7, "cost": 5000 },
     { "id": "rattler", "starter": true },
     { "id": "seeker", "starter": true },
-    { "id": "tripwire", "level": 2, "cost": 800 },
+    { "id": "tripwire", "starter": true },
     { "id": "slick", "level": 4, "cost": 1200 },
     { "id": "stinger", "level": 3, "cost": 1000 },
     { "id": "scatter", "level": 5, "cost": 2000 },
@@ -42,7 +42,6 @@
     { "id": "savanna_sprint", "level": 4, "cost": 1500 },
     { "id": "jungle_temple", "level": 5, "cost": 2200 },
     { "id": "frostbite_pass", "level": 6, "cost": 2600 },
-    { "id": "crystal_caverns", "level": 8, "cost": 3500 },
-    { "id": "slot.special2", "level": 4, "cost": 2500 }
+    { "id": "crystal_caverns", "level": 8, "cost": 3500 }
   ]
 }
