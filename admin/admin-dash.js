@@ -163,6 +163,11 @@ async function renderDashboard(panel) {
 
 // ------------------------------------------------------------------ users
 
+/** Player pictures only from our own storage: any other address would tell its owner when an admin looked. */
+function safeAvatar(url) {
+  return typeof url === "string" && url.startsWith(SUPABASE_URL + "/storage/v1/object/public/");
+}
+
 const users = { search: "", sort: "last_seen", page: 0, size: 50 };
 const banned = b => b.banned;
 
@@ -191,7 +196,7 @@ async function renderUsers(panel) {
       <tbody>${rows.map(u => {
         const s = save[u.user_id] || {};
         return `<tr data-id="${esc(u.user_id)}">
-          <td>${u.avatar && /^https?:/.test(u.avatar) ? `<img class="av" src="${esc(u.avatar)}" alt="">` : `<span class="av blank"></span>`}</td>
+          <td>${safeAvatar(u.avatar) ? `<img class="av" src="${esc(u.avatar)}" alt="">` : `<span class="av blank"></span>`}</td>
           <td><a href="#" data-open><strong>${esc(u.name || "(no racer card)")}</strong></a><br><span class="muted small">${esc(u.email || "")}</span></td>
           <td>${esc(s.level ?? "")}</td><td>${s.credits != null ? Number(s.credits).toLocaleString() : ""}</td>
           <td>${minutesText(u.minutes)}</td><td>${u.races}${u.wins ? ` <span class="muted small">(${u.wins} wins)</span>` : ""}</td>
@@ -295,7 +300,7 @@ async function openUser(id, row, profile) {
   for (const s of sessions) { const k = new Date(s.started_at).toDateString(); if (perDay.has(k)) perDay.set(k, perDay.get(k) + Number(s.minutes)); }
   sheet.innerHTML = `<div class="sheet-body">
     <button class="close" data-close>✕</button>
-    <div class="row">${row.avatar && /^https?:/.test(row.avatar) ? `<img class="av big" src="${esc(row.avatar)}" alt="">` : ""}
+    <div class="row">${safeAvatar(row.avatar) ? `<img class="av big" src="${esc(row.avatar)}" alt="">` : ""}
       <div><h2>${esc(row.name || "(no racer card)")}</h2><div class="muted small">${esc(row.email || "")}<br>${esc(id)}</div></div></div>
     <div class="kpis small">
       ${kpi("Time played", minutesText(row.minutes))}
