@@ -1,0 +1,16 @@
+{
+    "name": "GrudgeMatch.CrossInvites",
+    "rootNamespace": "GrudgeMatch.CrossInvites",
+    "references": [
+        "GrudgeMatch.CrossInvites.Logic"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
